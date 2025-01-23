@@ -1,0 +1,81 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem auto;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: left;
+
+  thead {
+    background-color: blue;
+
+    th {
+      padding: 10px;
+      border: 1px solid blue;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: blue;
+        ;
+      }
+
+      &:hover {
+        background-color: blue;
+        ;
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid blue;
+        ;
+
+        ion-label {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+
+        ion-checkbox {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

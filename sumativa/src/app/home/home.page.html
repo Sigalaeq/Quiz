@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <h1><strong>Registro de eventos</strong></h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <ion-list>
+      <ion-item>
+        <ion-input [formControl]="EventN" label="Nombre del evento"
+          placeholder="Ingresa el nombre del evento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [formControl]="Nombre" label="Nombre del encargado"
+          placeholder="Ingrese el nombre del encargado"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [formControl]="Ubicacion" label="Ubicacion del evento"
+          placeholder="Ingrese la Ubicacion del evento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" [formControl]="Telefono" label="Telefono del encargado"
+          placeholder="Ingrese el telefono del encargado"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="date" [formControl]="Fecha1" label="Fecha de inicio del evento"
+          placeholder="Ingrese la fecha inicio del evento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="date" [formControl]="Fecha2" label="Fecha fin del evento"
+          placeholder="Ingrese la fecha fin del evento"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="addEvento()" expand="block">Guardar evento</ion-button>
+  </div>
+  <div class="table-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Evento</th>
+          <th>Nombre</th>
+          <th>Ubicación</th>
+          <th>Teléfono</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Fin</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Eventos of Eventos; let indice = index">
+          <td>{{ indice + 1 }}</td>
+          <td>{{ Eventos.EventN }}</td>
+          <td>{{ Eventos.Nombre }}</td>
+          <td>{{ Eventos.Ubicacion }}</td>
+          <td>{{ Eventos.Telefono }}</td>
+          <td>{{ Eventos.Fecha1 }}</td>
+          <td>{{ Eventos.Fecha2 }}</td>
+          <td>
+            <ion-label>Completado</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</ion-content>
